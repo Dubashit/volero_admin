@@ -1,0 +1,12 @@
+.Select{
+    border: 1px solid #ccc;
+    width: 1000px;
+    font-size: 16px;
+    border-radius: 5px;
+    z-index: 100;
+    position: relative;
+}
+
+.dropdown{
+    z-index: 1001;
+}

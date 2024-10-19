@@ -1,0 +1,39 @@
+.requests__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.requests__list thead th {
+    color: #69070D;
+    text-align: left;
+    padding: 12px;
+    font-weight: 300;
+}
+
+.requests__list tbody td {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.requests__list thead th:nth-child(2) {
+    width: 100px;
+}
+
+.requests__list thead th:nth-child(2) {
+    width: 300px;
+}
+
+.requests__list thead th:nth-child(3) {
+    width: 300px;
+}
+
+.requests__list thead th:nth-child(4) {
+    width: 100px;
+}
+
+.request__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

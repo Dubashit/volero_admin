@@ -1,0 +1,57 @@
+.coefficients__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.coefficients__list thead th {
+    background-color: #f4f4f4;
+    color: #69070D;
+    text-align: left;
+    padding: 12px;
+    font-weight: 300;
+}
+
+.coefficients__list tbody td {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.coefficients__list thead th:nth-child(2) {
+    width: 500px;
+}
+
+.coefficients__list thead th:nth-child(3) {
+    width: 100px;
+}
+
+.coefficient__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit__btn,
+.delete__btn {
+    padding: 4px 12px;
+    cursor: pointer;
+    color: white;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.edit__btn {
+    background-color: #4CAF50;
+}
+
+.delete__btn {
+    background-color: #f44336;
+}
+
+.edit__btn:hover,
+.delete__btn:hover {
+    opacity: 0.8;
+    box-shadow: 0px 4px 10px rgb(0, 0, 0, 0.2);
+}

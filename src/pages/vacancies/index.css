@@ -1,0 +1,31 @@
+.vacancies__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.vacancies__list thead th {
+    color: #69070D;
+    text-align: left;
+    padding: 12px;
+    font-weight: 300;
+}
+
+.vacancies__list tbody td {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.vacancies__list thead th:nth-child(2) {
+    width: 500px;
+}
+
+.vacancies__list thead th:nth-child(3) {
+    width: 100px;
+}
+
+.vacancy__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

@@ -1,0 +1,21 @@
+
+.tags__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tags__list thead th {
+    color: #69070D;
+    text-align: left;
+    padding: 10px;
+    font-weight: 300;
+}
+
+.tags__list tbody td {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #F3F5F9;
+}

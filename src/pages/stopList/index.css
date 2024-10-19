@@ -1,0 +1,32 @@
+.stopList__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.stopList__list thead th {
+    background-color: #f4f4f4;
+    color: #69070D;
+    text-align: left;
+    padding: 12px;
+    font-weight: 300;
+}
+
+.stopList__list tbody td {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.stopList__list thead th:nth-child(2) {
+    width: 500px;
+}
+
+.stopList__list thead th:nth-child(3) {
+    width: 100px;
+}
+
+.stopList__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

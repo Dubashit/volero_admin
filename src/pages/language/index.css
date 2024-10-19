@@ -1,0 +1,32 @@
+.languages__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.languages__list thead th {
+    background-color: #f4f4f4;
+    color: #69070D;
+    text-align: left;
+    padding: 12px;
+    font-weight: 300;
+}
+
+.languages__list tbody td {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.languages__list thead th:nth-child(2) {
+    width: 700px;
+}
+
+.languages__list thead th:nth-child(3) {
+    width: 100px;
+}
+
+.language__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

@@ -1,0 +1,43 @@
+.testimonials__list {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.testimonials__list thead th {
+    color: #69070D;
+    text-align: left;
+    padding: 12px;
+    font-weight: 300;
+}
+
+.testimonials__list tbody td {
+    padding: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.testimonials__list thead th:nth-child(1) {
+    width: 100px;
+}
+
+.testimonials__list thead th:nth-child(2) {
+    width: 100px;
+}
+
+.testimonials__list thead th:nth-child(3) {
+    width: 600px;
+}
+
+.testimonials__list thead th:nth-child(4) {
+    width: 150px;
+}
+
+.testimonials__list thead th:nth-child(5) {
+    width: 100px;
+}
+
+.testimonials__actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

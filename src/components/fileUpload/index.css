@@ -1,0 +1,30 @@
+.image__viewer{
+    width: 1000px;
+    height: 400px;
+    text-align: center;
+    right: 0;
+    margin-bottom: 30px;
+}
+
+.image__viewer img{
+    height: 100%;
+}
+
+.pick__btn{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.image__viewer>img{
+    width: 50%;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.file__upload{
+    width: 1000px;
+}

@@ -1,0 +1,98 @@
+.add__btn__block {
+    width: 100%;
+    height: 50px;
+    text-align: end;
+}
+
+.add__btn {
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 22px;
+    font-weight: 300;
+    background-color: #730901;
+}
+
+.add__btn:hover {
+    background-color: #7b221c;
+}
+
+.modal {
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.form__group {
+    margin-bottom: 20px;
+    padding: 0 20px 0 0;
+}
+
+.form__group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.form__group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.save__button {
+    background-color: #22c55e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+}
+
+.save__button:hover {
+    background-color: #16a34a;
+}
+
+.form__group label::after {
+    content: " *";
+    color: red;
+}
+
+.form__group>textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100px;
+}

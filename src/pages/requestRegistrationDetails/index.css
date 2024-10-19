@@ -1,0 +1,7 @@
+.request__title{
+    width: 190px;
+}
+
+.request__title::after{
+    content: '';
+}

@@ -1,0 +1,30 @@
+.resume__detail__item {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    border-top: 1px solid #ddd;
+    padding: 20px 10px;
+}
+
+.resume__title::after {
+    content: "";
+}
+
+.resume__title{
+    width: 150px;
+}
+
+.resume__field {
+    font-size: 18px;
+    color: black;
+}
+
+.resume__field a{
+    color: black;
+}
+
+.resume__detail__item:first-child{
+    border: 0;
+}

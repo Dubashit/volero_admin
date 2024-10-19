@@ -1,0 +1,11 @@
+.text__editor{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.editor{
+    width: 1000px;
+    height: 300px;
+    margin-bottom: 40px;
+}
