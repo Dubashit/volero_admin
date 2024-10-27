@@ -51,6 +51,7 @@ export default function Edit() {
     const [comment, setComment] = useState(testimonial?.comment)
     const [countOfStars, setCountOfStars] = useState(testimonial?.countOfStars)
     const [image, setImage] = useState(testimonial?.image)
+    const [relation, setRelation] = useState(testimonial?.relation)
 
     const getTagsAndRelatedArticles = useCallback(async () => {
         try {
@@ -380,6 +381,21 @@ export default function Edit() {
                             max='5'
                             required
                         />
+                    </div>
+                    <div className='edit__form'>
+                        <div className='subtitle'>Relation</div>
+                        <select
+                            type='text'
+                            value={relation}
+                            onChange={(e) => setRelation(e.target.value)}
+                            required
+                        >
+                            <option value={''}></option>
+                            <option value={'homePage'}>Home page</option>
+                            <option value={'aboutPage'}>About us page</option>
+                            <option value={'productPage'}>Product page</option>
+                            <option value={'loyaltyPage'}>Loyalty page</option>
+                        </select>
                     </div>
                     <div className='edit__form'>
                         <div className='subtitle'>Author image</div>

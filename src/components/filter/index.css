@@ -115,3 +115,8 @@
 .input__request__register{
     width: 90%;
 }
+
+.input__request__points{
+    width: 100%;
+    box-sizing: border-box;
+}

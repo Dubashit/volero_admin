@@ -62,6 +62,11 @@ export const getRequestRegister = async (setFilteredRequestRegister) => {
     setFilteredRequestRegister(response.data);
 }
 
+export const getRequestForPoints = async (setFilteredRequestsForPoints) => {
+    const response = await axios.get(`${API_URL}/requestForPoints`);
+    setFilteredRequestsForPoints(response.data)
+}
+
 export const getResume = async (setFilteredResume) => {
     const response = await axios.get(`${API_URL}/resume`);
     setFilteredResume(response.data);
@@ -257,6 +262,19 @@ export const putPassword = async (username, password, newPassword) => {
     }
 }
 
+export const putRequestForPoints = async (id, data) => {
+    try {
+        const response = await axios.put(`${API_URL}/requestForPoints/${id}`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        return response;
+    } catch (error) {
+        console.error('Error', error);
+    }
+};
+
 
 
 
@@ -371,6 +389,24 @@ export const searchRequestRegister = async (firstName, lastName, startDate, endD
     }
 };
 
+export const searchRequestForPoints = async (usernameRequestForPoints, email, startDate, endDate, setFilteredItems) => {
+    try {
+        let url = `${API_URL}/requestRegister/search?username=${usernameRequestForPoints}&email=${email}`;
+
+        if (startDate) {
+            url += `&startDate=${startDate.toISOString()}`;
+        }
+        if (endDate) {
+            url += `&endDate=${endDate.toISOString()}`;
+        }
+
+        const response = await axios.get(url);
+        setFilteredItems(response.data);
+    } catch (error) {
+        console.error('Error fetching requests registration:', error);
+    }
+};
+
 
 
 
@@ -404,6 +440,10 @@ export const deleteLanguage = async (id) => {
 
 export const deleteRequestRegister = async (id) => {
     return await axios.delete(`${API_URL}/requestRegister/${id}`);
+}
+
+export const deleteRequestForPoints = async (id) => {
+    return await axios.delete(`${API_URL}/requestForPoints/${id}`);
 }
 
 export const deleteResume = async (id) => {

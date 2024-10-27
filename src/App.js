@@ -21,6 +21,8 @@ import ResumeDetails from "./pages/resumeDetails/ResumeDetails";
 import TestimonialsPage from "./pages/testimonials/TestimonialsPage";
 import RequestRegistration from "./pages/requestRegistration/RequestRegistration";
 import RequestRegistrationDetails from "./pages/requestRegistrationDetails/RequestRegistrationDetails";
+import RequestForPoints from "./pages/requestForPoints/RequestForPoints";
+import RequestForPointsDetails from "./pages/requestForPointsDetails/RequestForPointsDetails";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -52,6 +54,8 @@ function App() {
         <Route path="/globalSetting" element={renderPageWithLayout(GlobalSettingPage)} />
         <Route path="/requestRegister" element={renderPageWithLayout(RequestRegistration)} />
         <Route path="/requestRegister/details/:id" element={renderPageWithLayout(RequestRegistrationDetails)} />
+        <Route path="/requestForPoints" element={renderPageWithLayout(RequestForPoints)} />
+        <Route path="/requestForPoints/details/:id" element={renderPageWithLayout(RequestForPointsDetails)} />
         <Route path="/stopList" element={renderPageWithLayout(StopListPage)} />
         <Route path="/testimonials" element={renderPageWithLayout(TestimonialsPage)} />
         <Route path="/languages" element={renderPageWithLayout(LanguagePage)} />

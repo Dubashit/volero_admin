@@ -3,7 +3,7 @@ import './index.css';
 import { useLocation } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.module.css';
-import { searchArticles, searchCoefficients, searchLanguages, searchRequestRegister, searchResume, searchStopList, searchTags, searchTestimonials, searchVacancies } from '../../api';
+import { searchArticles, searchCoefficients, searchLanguages, searchRequestForPoints, searchRequestRegister, searchResume, searchStopList, searchTags, searchTestimonials, searchVacancies } from '../../api';
 
 export default function Filter({ setFilteredItems, refreshData }) {
 
@@ -29,6 +29,8 @@ export default function Filter({ setFilteredItems, refreshData }) {
     const [countOfStars, setCountOfStars] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [usernameRequestForPoints, setUsernameRequestForPoints] = useState('')
+    const [email, setEmail] = useState('')
 
     const toggleFilter = () => {
         setIsOpen(!isOpen);
@@ -52,6 +54,8 @@ export default function Filter({ setFilteredItems, refreshData }) {
         setCountOfStars('')
         setFirstName('')
         setLastName('')
+        setUsernameRequestForPoints('')
+        setEmail('')
         setStartDate(null)
         setEndDate(null)
         setFilteredItems([]);
@@ -59,24 +63,26 @@ export default function Filter({ setFilteredItems, refreshData }) {
     };
 
     const searchData = async () => {
-        if(location.pathname.includes('/tags')){
+        if (location.pathname.includes('/tags')) {
             await searchTags(titleTag, setFilteredItems);
-        }if(location.pathname.includes('/coefficients')){
+        } if (location.pathname.includes('/coefficients')) {
             await searchCoefficients(salesIdCoef, percentage, setFilteredItems);
-        }if(location.pathname.includes('/languages')){
+        } if (location.pathname.includes('/languages')) {
             await searchLanguages(code, titleLanguage, setFilteredItems);
-        }if(location.pathname.includes('/stopList')){
+        } if (location.pathname.includes('/stopList')) {
             await searchStopList(salesIdStopList, usernameStopList, setFilteredItems);
-        }if(location.pathname.includes('/vacancies')){
+        } if (location.pathname.includes('/vacancies')) {
             await searchVacancies(titleVacancy, statusVacancy, setFilteredItems);
-        }if(location.pathname.includes('/resume')){
+        } if (location.pathname.includes('/resume')) {
             await searchResume(nameResume, startDate, endDate, setFilteredItems);
-        }if(location.pathname.includes('/articles')){
+        } if (location.pathname.includes('/articles')) {
             await searchArticles(titleArticle, statusArticle, setFilteredItems);
-        }if(location.pathname.includes('/testimonials')){
+        } if (location.pathname.includes('/testimonials')) {
             await searchTestimonials(author, position, countOfStars, setFilteredItems);
-        }if(location.pathname.includes('/requestRegister')){
+        } if (location.pathname.includes('/requestRegister')) {
             await searchRequestRegister(firstName, lastName, startDate, endDate, setFilteredItems);
+        } if (location.pathname.includes('/requestForPoints')) {
+            await searchRequestForPoints(usernameRequestForPoints, email, startDate, endDate, setFilteredItems);
         }
     }
 
@@ -399,6 +405,62 @@ export default function Filter({ setFilteredItems, refreshData }) {
                                 minDate={startDate}
                                 dateFormat="dd/MM/yyyy"
                                 className='input__request__register'
+                            />
+                        </div>
+                        <div className='btn__actions'>
+                            <button className="reset__btn reset__btn__resume" onClick={resetData}>Reset</button>
+                            <button className="search__btn search__btn__resume" onClick={searchData}>Search</button>
+                        </div>
+                    </div>
+                </div>
+            )
+        } else if (location.pathname === '/requestForPoints') {
+            return (
+                <div className="filter__body">
+                    <div className="filter__row">
+                        <div className='filter__item'>
+                            <label>Username</label>
+                            <input
+                                className='input__request__points'
+                                type="text"
+                                value={usernameRequestForPoints}
+                                onChange={(e) => { setUsernameRequestForPoints(e.target.value) }}
+                                required
+                            />
+                        </div>
+                        <div className='filter__item'>
+                            <label>Email</label>
+                            <input
+                                className='input__request__points'
+                                type="text"
+                                value={email}
+                                onChange={(e) => { setEmail(e.target.value) }}
+                                required
+                            />
+                        </div>
+                        <div className='filter__item'>
+                            <label>Created from</label>
+                            <DatePicker
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
+                                selectsStart
+                                startDate={startDate}
+                                endDate={endDate}
+                                dateFormat="dd/MM/yyyy"
+                                className='input__request__points'
+                            />
+                        </div>
+                        <div className='filter__item'>
+                            <label>Created to</label>
+                            <DatePicker
+                                selected={endDate}
+                                onChange={(date) => setEndDate(date)}
+                                selectsEnd
+                                startDate={startDate}
+                                endDate={endDate}
+                                minDate={startDate}
+                                dateFormat="dd/MM/yyyy"
+                                className='input__request__points'
                             />
                         </div>
                         <div className='btn__actions'>

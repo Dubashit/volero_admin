@@ -30,6 +30,7 @@ export default function Add() {
     const [comment, setComment] = useState('')
     const [countOfStars, setCountOfStars] = useState('')
     const [image, setImage] = useState('')
+    const [relation, setRelation] = useState('')
 
     useEffect(() => {
         handleGetTagsAndRelatedArticles();
@@ -78,12 +79,12 @@ export default function Add() {
                     const formData = new FormData();
 
                     formData.append('title', title);
-                    formData.append('author', author);
-                    formData.append('seoUrl', seoUrl);
+                    formData.append('author', author || '');
+                    formData.append('seoUrl', seoUrl || '');
                     formData.append('seoTitle', seoTitle);
                     formData.append('seoDescription', seoDescription);
-                    formData.append('tags', JSON.stringify(selectedTags.map(tag => tag.value)));
-                    formData.append('relatedArticles', JSON.stringify(selectedRelatedArticles.map(article => article.value)));
+                    formData.append('tags', JSON.stringify(selectedTags.map(tag => tag.value)) || '');
+                    formData.append('relatedArticles', JSON.stringify(selectedRelatedArticles.map(article => article.value)) || '');
                     formData.append('body', body);
                     formData.append('status', status);
                     formData.append('readTime', readTime);
@@ -98,7 +99,7 @@ export default function Add() {
             }
         } else if (location.pathname === '/testimonials/add') {
             try {
-                if (authorTestimonial && position && comment && countOfStars && image) {
+                if (authorTestimonial && position && comment && countOfStars && image && relation) {
                     const formData = new FormData();
 
                     formData.append('author', authorTestimonial);
@@ -106,6 +107,7 @@ export default function Add() {
                     formData.append('comment', comment);
                     formData.append('countOfStars', countOfStars);
                     formData.append('image', image);
+                    formData.append('relation', relation);
 
                     await postTestimonial(formData, navigate)
                 }
@@ -338,6 +340,21 @@ export default function Add() {
                             min='1'
                             max='5'
                         />
+                    </div>
+                    <div className='edit__form'>
+                        <div className='subtitle'>Relation</div>
+                        <select
+                            type='text'
+                            value={relation}
+                            onChange={(e) => setRelation(e.target.value)}
+                            required
+                        >
+                            <option value={''}></option>
+                            <option value={'homePage'}>Home page</option>
+                            <option value={'aboutPage'}>About us page</option>
+                            <option value={'productPage'}>Product page</option>
+                            <option value={'loyaltyPage'}>Loyalty page</option>
+                        </select>
                     </div>
                     <div className='edit__form'>
                         <div className='subtitle'>Author image</div>

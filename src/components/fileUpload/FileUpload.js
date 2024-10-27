@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './index.css'
 import { useLocation } from 'react-router-dom';
+import { getPicture } from '../../api';
 
 export default function FileUpload({ onFileSelect, isEditPage, item }) {
 
@@ -43,13 +44,13 @@ export default function FileUpload({ onFileSelect, isEditPage, item }) {
 
             {isEditPage && location.pathname.includes('/articles/edit') && (
                 <div className='image__viewer'>
-                    <img src={`http://localhost:3001/public${item.preview}`} alt='image1' />
+                    {getPicture(item.preview)}
                 </div>
             )}
 
             {isEditPage && location.pathname.includes('/testimonials/edit') && (
                 <div className='image__viewer'>
-                    <img src={`http://localhost:3001/public${item.image}`} alt='image1' />
+                    {getPicture(item.image)}
                 </div>
             )}
         </div>
